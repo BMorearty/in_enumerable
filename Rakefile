@@ -5,9 +5,13 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "in_enumerable"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
-    gem.email = "github1@morearty.org"
+    gem.summary = %Q{extends the Object type with the tasty 'in?' method}
+    gem.description = %Q{extends the Object type with the tasty 'in?' method, which returns true if an object is included
+in a list or other enumerable value.  So you can do this:
+  1.in? [1,2]          # => true
+  3.in? [1,2]          # => false
+}
+    gem.email = "brian at morearty.org"
     gem.homepage = "http://github.com/BMorearty/in_enumerable"
     gem.authors = ["Brian Morearty"]
     gem.add_development_dependency "thoughtbot-shoulda", ">= 0"

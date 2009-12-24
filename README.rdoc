@@ -1,6 +1,63 @@
 = in_enumerable
 
-Description goes here.
+A simple but nice language extension.
+
+in_enumerable extends the Object type with the tasty 'in?' method, which returns true if an object is included
+in a list or other enumerable value.  So you can do this:
+
+  1.in? [1,2]          # => true
+  3.in? [1,2]          # => false
+
+instead of the slightly more awkward:
+
+  [1,2].include?(1)    # => true
+  [1,2].include?(3)    # => false
+
+Despite its name, in_enumerable doesn't require an enumerable type.  
+It uses duck typing to work with any type that has an 'include?' method, such as:
+
+  # Array (see examples above)
+
+  # Hash
+  h = { "a" => 100, "b" => 200 }
+  "a".in?(h)           # => true
+  "z".in?(h)           # => false
+
+  # String
+  "lo".in?("hello")    # => true
+  "ol".in?("hello")    # => false
+  ?h.in?("hello")      # => true
+
+  # Range
+  25.in?(1..50)        # => true
+  75.in?(1..50)        # => false
+
+  # Set
+  require 'set'
+  s = Set.new([1,2])
+  1.in?(s)             # => true
+  3.in?(s)             # => false
+
+  # Even Module
+  module A
+  end
+  class B
+    include A
+  end
+  class C < B
+  end
+  A.in?(B)             # => true
+  A.in?(C)             # => true
+  A.in?(A)             # => false
+
+== Installation
+
+  gem install in_enumerable
+
+== Usage
+
+  require 'rubygems'
+  require 'in_enumerable'
 
 == Note on Patches/Pull Requests
  
