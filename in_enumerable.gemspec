@@ -27,6 +27,7 @@ in a list or other enumerable value.  So you can do this:
      "README.rdoc",
      "Rakefile",
      "VERSION",
+     "in_enumerable.gemspec",
      "lib/in_enumerable.rb",
      "test/helper.rb",
      "test/test_in_enumerable.rb"
