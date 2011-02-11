@@ -20,18 +20,7 @@ in a list or other enumerable value.  So you can do this:
     "LICENSE",
      "README.rdoc"
   ]
-  s.files = [
-    ".document",
-     ".gitignore",
-     "LICENSE",
-     "README.rdoc",
-     "Rakefile",
-     "VERSION",
-     "in_enumerable.gemspec",
-     "lib/in_enumerable.rb",
-     "test/helper.rb",
-     "test/test_in_enumerable.rb"
-  ]
+  s.files = `git ls-files`.split("\n")
   s.homepage = %q{http://github.com/BMorearty/in_enumerable}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
